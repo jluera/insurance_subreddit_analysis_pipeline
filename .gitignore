@@ -34,4 +34,7 @@ override.tf.json
 terraform.rc
 
 # Ignore envoronment variables configured in .env files
-.env 
+.env
+
+# Ignore ipython notebook checkpoints
+.ipynb_checkpoints 
