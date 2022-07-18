@@ -1,4 +1,4 @@
-# finance_sub_pipeline
+# /r/Finance Subreddit Pipeline
 
 An EtLT pipeline to do the following to extract and transform the initial post comments from the /r/Insurance subreddit.
 
