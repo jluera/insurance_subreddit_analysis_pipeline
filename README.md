@@ -1,4 +1,4 @@
-# Reddit /r/insurnace ETLT Pipeline
+# Reddit /r/insurance ETLT Pipeline
 
 An EtLT pipeline to do the following to extract and transform the initial post comments from the /r/insurance subreddit.
 
@@ -23,3 +23,6 @@ The final dashboard can be configured as required but should look something like
 
 [insurance_subreddit_stats_dash.pdf](https://github.com/jluera/finance_sub_pipeline/files/9134594/insurance_subreddit_stats_dash.pdf)
 ![insurance_sub_dashboard_image](https://user-images.githubusercontent.com/367461/179586842-8f60e9a3-0fa9-4c08-9705-528d58c1cf09.png)
+
+## Setup
+
