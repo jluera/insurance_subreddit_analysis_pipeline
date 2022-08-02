@@ -1,6 +1,6 @@
 # Reddit /r/insurance ETLT Pipeline
 
-An EtLT pipeline to do the following to extract and transform the initial post comments from the /r/insurance subreddit.
+An EtLT pipeline to do the following to extract and transform the initial post comments from the [r/insurance](https://www.reddit.com/r/insurance/) subreddit.
 
 ## Motivation
 
@@ -25,4 +25,4 @@ The final dashboard can be configured as required but should look something like
 ![insurance_sub_dashboard_image](https://user-images.githubusercontent.com/367461/179586842-8f60e9a3-0fa9-4c08-9705-528d58c1cf09.png)
 
 ## Setup
-
+To Do:
