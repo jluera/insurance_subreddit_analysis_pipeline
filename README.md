@@ -20,6 +20,7 @@ Admittedly, some of the leveraged components, such as the use of Airflow, is kin
 ## Dashboard
 
 The final dashboard can be configured as required but should look something like this:
+
 This was created via Google Data Studio (Now called Google Looker Studio).
 
 [insurance_subreddit_stats_dash.pdf](https://github.com/jluera/finance_sub_pipeline/files/9134594/insurance_subreddit_stats_dash.pdf)
