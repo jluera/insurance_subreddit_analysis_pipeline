@@ -43,12 +43,15 @@ Clone the repo on your system and copy the files under the terraform directory t
 Copy the terraform.tfvars.template file, rename it to drop the .template from the name, and edit it to add the correct resource names for your GCP environment.
 
 Initialize Terraform:
+
 ```terraform init```
 
 Plan the infrastructure and make sure that you're creating a bucket in Cloud Storage as well as a dataset in BigQuery
+
 ```terraform plan```
 
 If the plan details are as expected, apply the changes.
+
 ```terraform apply```
 
 This should spin up the GCP resources you will utilize later.
