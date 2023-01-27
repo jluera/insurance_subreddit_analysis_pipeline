@@ -68,17 +68,14 @@ If the plan details are as expected, apply the changes.
 This should spin up the GCP resources you will utilize later.
 
 ## Airflow Setup
-* Go to the dataeng-zoomcamp/7_project/airflow folder.
+* Copy the contents of the airflow folder over where needed
 * Run the following command and write down the output:
-
 ```echo -e "AIRFLOW_UID=$(id -u)" ```
 * Open the .env file and change the value of AIRFLOW_UID for the value of the previous command.
 * Change the value of GCP_PROJECT_ID for the name of your project id in Google Cloud and also change the value of GCP_GCS_BUCKET for the name of your bucket.
 * Build the custom Airflow Docker image:
-* 
 ```docker-compose build```
 * Initialize the Airflow configs:
-* 
 ```docker-compose up airflow-init```
 * Run Airflow
 * 
