@@ -88,12 +88,17 @@ You may now access the Airflow GUI by browsing to localhost:8080. Username and p
 
 ```IMPORTANT: this is NOT a production-ready setup! The username and password for Airflow have not been modified in any way; you can find them by searching for _AIRFLOW_WWW_USER_USERNAME and _AIRFLOW_WWW_USER_PASSWORD inside the docker-compose.yaml file.```
 
+# Run a DAG in Airflow
+If you performed all the steps of the previous section, you should now have a web browser with the Airflow dashboard.
+
+To trigger the DAG, simply click on the switch icon next to the DAG name. 
+
+After the data ingestion, you may shut down Airflow by pressing Ctrl+C on the terminal running Airflow and then running docker-compose down. 
 
 ## Dashboard
+The dashboard used in this project was generated with Google Looker Studio (Formerly Google Data Studio).
 
 The final dashboard can be configured as required but should look something like this:
-
-This was created via Google Data Studio (Now called Google Looker Studio).
 
 [insurance_subreddit_stats_dash.pdf](https://github.com/jluera/insurance_sub_pipeline/files/9134594/insurance_subreddit_stats_dash.pdf)
 ![insurance_sub_dashboard_image](https://user-images.githubusercontent.com/367461/179586842-8f60e9a3-0fa9-4c08-9705-528d58c1cf09.png)
