@@ -88,7 +88,7 @@ You may now access the Airflow GUI by browsing to localhost:8080. Username and p
 
 ```IMPORTANT: this is NOT a production-ready setup! The username and password for Airflow have not been modified in any way; you can find them by searching for _AIRFLOW_WWW_USER_USERNAME and _AIRFLOW_WWW_USER_PASSWORD inside the docker-compose.yaml file.```
 
-# Run a DAG in Airflow
+# Run the DAG with Airflow
 If you performed all the steps of the previous section, you should now have a web browser with the Airflow dashboard.
 
 To trigger the DAG, simply click on the switch icon next to the DAG name. 
