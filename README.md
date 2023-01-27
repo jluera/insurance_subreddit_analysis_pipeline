@@ -86,7 +86,7 @@ This should spin up the GCP resources you will utilize later.
 
 You may now access the Airflow GUI by browsing to localhost:8080. Username and password are both airflow .
 
-IMPORTANT: this is NOT a production-ready setup! The username and password for Airflow have not been modified in any way; you can find them by searching for _AIRFLOW_WWW_USER_USERNAME and _AIRFLOW_WWW_USER_PASSWORD inside the docker-compose.yaml file.
+```IMPORTANT: this is NOT a production-ready setup! The username and password for Airflow have not been modified in any way; you can find them by searching for _AIRFLOW_WWW_USER_USERNAME and _AIRFLOW_WWW_USER_PASSWORD inside the docker-compose.yaml file.```
 
 
 ## Dashboard
