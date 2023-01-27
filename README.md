@@ -35,7 +35,6 @@ Prior to Data Ingestion, the Google Cloud services are spun up using Terraform, 
 
 ## Google credentials
 You will need to create an environment variable called GOOGLE_APPLICATION_CREDENTIALS and assign it to the path of your json credentials file, which should be $HOME/.google/credentials/ . 
-Assuming you're running bash:
 1. Edit .bashrc:
 2. At the end of the file, add the following line:
 ```export GOOGLE_APPLICATION_CREDENTIALS="<path/to/authkeys>.json" ```
