@@ -1,0 +1,17 @@
+# Edit the following variables as needed for your environments
+
+credentials = "*/path/to/google_credentials.json"
+
+project = "*gcp_project_name"
+
+storage_bucket = "*gcp_cloud_storage_bucket"
+
+region = "*gcp_project_region"
+
+location = "*gcp_project_location"
+
+zone = "*gcp_project_zone"
+
+storage_class = "standard"
+
+bq_dataset = "*bigquery_dataset_name"
