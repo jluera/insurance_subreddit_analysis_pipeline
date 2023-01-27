@@ -14,7 +14,7 @@ This project makes use of the following resources:
 * Google Cloud Storage (To ingest parquet files before they get loaded into Big Query)
 * Google Big Query (To batch load parquet files from Cloud Storage tables and perform some simple analysis on them)
 
-Data ingestion is handled by Airflow running in a Docker container.  Airflow runs a DAG which handles downloading the necessary data from the Reddit /r/insurance subreddit using the PushShift API. The DAG then runs another script that performs some data cleaning and mugning with Pandas and saves the dataset into a Parquet format. A third script handles loading the data into Google Cloud Storage.
+Data ingestion is handled by Airflow running in a Docker container.  Airflow initiates a single DAG which runs four scripts. The first script handles downloading the necessary data from the Reddit /r/insurance subreddit using the PushShift API. It then performs some simple data cleaning with Pandas and saves the dataset into a Parquet format. A second script loads this parquet file into Spark and performs some additional data cleansing. A third script handles loading the data into Google Cloud Storage. And the fourth script batch loads the data from Google Cloud Storage into a BigQuery table for further analysis.
 
 
 ## Workflow Summary
