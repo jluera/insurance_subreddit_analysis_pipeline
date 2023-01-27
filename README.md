@@ -27,19 +27,19 @@ Admittedly, some of the leveraged components, such as the use of Airflow, is kin
 Prior to Data Ingestion, the Google Cloud services are spun up using Terraform, which is running in a Docker container. The terraform.tfvars file should be edited to add the necessary variables for your cloud environment. The other Terraform configs in this repo will pull those variables from the Terraform.tfvars file. You can then spin up your resources using terraform apply.
 
 ## Terraform:
-Run curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
-Run sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
-Run sudo apt-get update && sudo apt-get install terraform
+```Run curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - ```
+```Run sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main" ```
+```Run sudo apt-get update && sudo apt-get install terraform ```
 
 ## Google credentials
 You will need to create an environment variable called GOOGLE_APPLICATION_CREDENTIALS and assign it to the path of your json credentials file, which should be $HOME/.google/credentials/ . 
 Assuming you're running bash:
-1. vim .bashrc:
+1. Edit .bashrc:
 2. At the end of the file, add the following line:
-export GOOGLE_APPLICATION_CREDENTIALS="<path/to/authkeys>.json"
+```export GOOGLE_APPLICATION_CREDENTIALS="<path/to/authkeys>.json" ```
 3. Log out of your current terminal session and log back in, or run source ~/.bashrc to activate the environment variable.
 4. Refresh the token and verify the authentication with the GCP SDK:
-gcloud auth application-default login
+```gcloud auth application-default login ```
 5. Add the path to your terraform.tvars file.
 
 Data ingestion is handled by Airflow running in a Docker container.  Airflow initiates a single DAG which runs four scripts. The first script handles downloading the necessary data from the Reddit /r/insurance subreddit using the PushShift API. It then performs some simple data cleaning with Pandas and saves the dataset into a Parquet format. A second script loads this parquet file into Spark and performs some additional data cleansing. A third script handles loading the data into Google Cloud Storage. And the fourth script batch loads the data from Google Cloud Storage into a BigQuery table for further analysis.
