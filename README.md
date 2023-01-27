@@ -11,7 +11,7 @@ This project was designed to exercise pratical Data Engineering skills.  It was 
 1) Spin up Google Cloud Resources via Terraform.
 2) Run three scripts in Airflow running in a docker container.
 2) The first script will pull post data from the /r/Insurance subreddit using the Pushift, reduce columns with Pandas and save dataframe as a parquet file.
-3) The second scripts Perform simple transformations and data cleaning using PySpark.
+3) The second script perform simple transformations and data cleaning using PySpark.
 4) The third script loads data into Google Cloud Storage and BigQuery for further analsysis .
 5) The data can then be imported into Google DataStudio to make a dashboard of relevant information.
 
