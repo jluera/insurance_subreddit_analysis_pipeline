@@ -29,11 +29,29 @@ Admittedly, some of the leveraged components, such as the use of Airflow, is kin
 Prior to Data Ingestion, the Google Cloud services are spun up using Terraform, which is running in a Docker container. The terraform.tfvars file should be edited to add the necessary variables for your cloud environment. The other Terraform configs in this repo will pull those variables from the Terraform.tfvars file. You can then spin up your resources using terraform apply.
 
 ## Terraform:
+# Manual Terraform Install
 ```Run curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - ```
 
 ```Run sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main" ```
 
 ```Run sudo apt-get update && sudo apt-get install terraform ```
+
+## Terraform Configuration and Infrastructure Setup
+Make sure that the credentials are updated and the environment variable is set up.
+Clone the repo on your system and copy the files under the terraform directory to where you want to run it from.
+
+Copy the terraform.tfvars.template file, rename it to drop the .template from the name, and edit it to add the correct resource names for your GCP environment.
+
+Initialize Terraform:
+
+```terraform init```
+Plan the infrastructure and make sure that you're creating a bucket in Cloud Storage as well as a dataset in BigQuery
+
+```terraform plan```
+If the plan details are as expected, apply the changes.
+
+```terraform apply```
+This should spin up the GCP resources you will utilize later.
 
 ## Google credentials
 You will need to create an environment variable called GOOGLE_APPLICATION_CREDENTIALS and assign it to the path of your json credentials file, which should be $HOME/.google/credentials/ . 
