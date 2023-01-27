@@ -28,7 +28,9 @@ Prior to Data Ingestion, the Google Cloud services are spun up using Terraform, 
 
 ## Terraform:
 ```Run curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - ```
+
 ```Run sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main" ```
+
 ```Run sudo apt-get update && sudo apt-get install terraform ```
 
 ## Google credentials
