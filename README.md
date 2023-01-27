@@ -6,8 +6,18 @@ An EtLT pipeline to extract and transform the initial user post comments from th
 
 This project was designed to exercise practical Data Engineering skills.  It was inspired by work done in relation to the datatalks.club Data Engineering Zoomcamp and is a follow up on projects completed during that course.
 
-## Architecture
+## Project Architecture and Details
+This project makes use of the following resources:
+* Docker
+* Apache Airflow (Running in Docker container)
+* Terraform (Running in a Docker container)
+* Google Cloud Storage (To ingest parquet files before they get loaded into Big Query)
+* Google Big Query (To batch load parquet files from Cloud Storage tables and perform some simple analysis on them)
 
+Data ingestion is handled by Airflow running in a Docker container.  Airflow runs a DAG which handles downloading the necessary data from the Reddit /r/insurance subreddit using the PushShift API. The DAG then runs another script that performs some data cleaning and mugning with Pandas and saves the dataset into a Parquet format. A third script handles loading the data into Google Cloud Storage.
+
+
+## Workflow Summary
 1) Spin up Google Cloud Resources via Terraform.
 2) Run three scripts in Airflow running in a docker container.
 3) The first script retrieves user posting data from Reddit's /r/Insurance subreddit using the Pushift API. It then reduces columns with Pandas and saves dataframe as a parquet file.
