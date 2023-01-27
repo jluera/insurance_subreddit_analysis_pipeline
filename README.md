@@ -28,6 +28,17 @@ Admittedly, some of the leveraged components, such as the use of Airflow, is kin
 
 Prior to Data Ingestion, the Google Cloud services are spun up using Terraform, which is running in a Docker container. The terraform.tfvars file should be edited to add the necessary variables for your cloud environment. The other Terraform configs in this repo will pull those variables from the Terraform.tfvars file. You can then spin up your resources using terraform apply.
 
+## Google credentials
+You will need to create an environment variable called GOOGLE_APPLICATION_CREDENTIALS and assign it to the path of your json credentials file, which should be $HOME/.google/credentials/ . 
+1. Edit .bashrc:
+2. At the end of the file, add the following line:
+```export GOOGLE_APPLICATION_CREDENTIALS="<path/to/authkeys>.json" ```
+3. Log out of your current terminal session and log back in, or run source ~/.bashrc to activate the environment variable.
+4. Refresh the token and verify the authentication with the GCP SDK:
+```gcloud auth application-default login ```
+5. Add the path to your terraform.tvars file.
+
+
 ## Terraform:
 ### Manual Terraform Install
 ```Run curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - ```
@@ -56,15 +67,26 @@ If the plan details are as expected, apply the changes.
 
 This should spin up the GCP resources you will utilize later.
 
-## Google credentials
-You will need to create an environment variable called GOOGLE_APPLICATION_CREDENTIALS and assign it to the path of your json credentials file, which should be $HOME/.google/credentials/ . 
-1. Edit .bashrc:
-2. At the end of the file, add the following line:
-```export GOOGLE_APPLICATION_CREDENTIALS="<path/to/authkeys>.json" ```
-3. Log out of your current terminal session and log back in, or run source ~/.bashrc to activate the environment variable.
-4. Refresh the token and verify the authentication with the GCP SDK:
-```gcloud auth application-default login ```
-5. Add the path to your terraform.tvars file.
+## Airflow Setup
+* Go to the dataeng-zoomcamp/7_project/airflow folder.
+* Run the following command and write down the output:
+
+```echo -e "AIRFLOW_UID=$(id -u)" ```
+* Open the .env file and change the value of AIRFLOW_UID for the value of the previous command.
+* Change the value of GCP_PROJECT_ID for the name of your project id in Google Cloud and also change the value of GCP_GCS_BUCKET for the name of your bucket.
+* Build the custom Airflow Docker image:
+* 
+```docker-compose build```
+* Initialize the Airflow configs:
+* 
+```docker-compose up airflow-init```
+* Run Airflow
+* 
+```docker-compose up```
+
+You may now access the Airflow GUI by browsing to localhost:8080. Username and password are both airflow .
+
+IMPORTANT: this is NOT a production-ready setup! The username and password for Airflow have not been modified in any way; you can find them by searching for _AIRFLOW_WWW_USER_USERNAME and _AIRFLOW_WWW_USER_PASSWORD inside the docker-compose.yaml file.
 
 
 ## Dashboard
