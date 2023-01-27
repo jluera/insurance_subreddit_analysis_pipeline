@@ -1,10 +1,10 @@
 # Reddit /r/insurance ETLT Pipeline
 
-An EtLT pipeline to do the following to extract and transform the initial post comments from the [r/insurance](https://www.reddit.com/r/insurance/) subreddit.
+An EtLT pipeline to extract and transform the initial user post comments from the [r/insurance](https://www.reddit.com/r/insurance/) subreddit.
 
 ## Motivation
 
-This project was designed to exercise pratical Data Engineering skills.  It was inspired by work done in relation to the datatalks.club Data Engineering Zoomcamp and is a follow up on projects completed during that course.
+This project was designed to exercise practical Data Engineering skills.  It was inspired by work done in relation to the datatalks.club Data Engineering Zoomcamp and is a follow up on projects completed during that course.
 
 ## Architecture
 
