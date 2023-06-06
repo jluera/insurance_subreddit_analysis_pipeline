@@ -4,7 +4,7 @@ An EtLT pipeline to extract and transform the initial user post comments from th
 
 ## Motivation
 
-This project was designed to exercise practical Data Engineering skills.  It was inspired by work done in relation to the datatalks.club Data Engineering Zoomcamp and is a follow up on projects completed during that course.
+This project was designed to exercise practical Data Engineering skills.  It was inspired by work done in relation to the datatalks.club Data Engineering Zoomcamp and serves as my final Capstone Project completed during that course.
 
 ## Project Architecture and Details
 This project makes use of the following resources:
